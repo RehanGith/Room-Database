@@ -1,7 +1,6 @@
 package com.example.roomdatabase
 
 import androidx.room.Dao
-import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
@@ -13,4 +12,6 @@ interface StudentDAO {
     fun getAllStudents(): List<StudentTable>
     @Query("Delete from student where id = :stud")
     fun deleteStudent(stud : Int)
+    @Query("Update student set name = :nameSt where id = :idSt")
+    fun updateStudent(nameSt: String, idSt: Int)
 }

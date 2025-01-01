@@ -14,8 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val db = DBHolder.getInstance(this)
         findViewById<Button>(R.id.btInsertTable).setOnClickListener {
-            db.dao.deleteStudent(1)
-            db.dao.deleteStudent(2)
+            db.dao.updateStudent("Aliya", 1)
             println( db.dao.getAllStudents())
         }
 
